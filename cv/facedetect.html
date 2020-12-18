@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Deteksi Wajah</title>
+<script src="jquery.min.js"></script>
+</head>
+<body>
+
+<h3>Klik disini untuk dataeksi wajah</h3>
+<div class="result"></div>
+<script>
+  $("h3").click(function(){
+    $.get("http://192.168.1.10/cgi-bin/violapi.py",{jepret:1}).done(function(data){
+      $(".result").html(data);
+    });
+  });
+</script>
+</body>
+</html>

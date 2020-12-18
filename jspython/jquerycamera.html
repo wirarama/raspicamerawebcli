@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery.min.js"></script>
+</head>
+<body>
+
+<h3>Mau foto berapa kali? terus klik sini!</h3>
+<input type="text" class="ketik" value="3" size="4">
+<div class="result"></div>
+<script>
+  $("h3").click(function(){
+    $.get("http://192.168.1.10/cgi-bin/cameraform.py",{jepret:$(".ketik").val()}).done(function(data){
+      $(".result").html(data);
+    });
+  });
+</script>
+</body>
+</html>

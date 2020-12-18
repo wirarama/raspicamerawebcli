@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery.min.js"></script>
+</head>
+<body>
+
+<h3>Klik sini!</h3>
+<input type="text" class="ketik" value="ketik apa saja disini" size="60">
+<div class="result"></div>
+<script>
+  $("h3").click(function(){
+    $.get("http://192.168.1.9/cgi-bin/pyform.py",{test:$(".ketik").val()}).done(function(data){
+      $(".result").html(data);
+    });
+  });
+</script>
+</body>
+</html>
